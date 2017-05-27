@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8>
+<title>HTML5 Chat</title>
+<body>
+<section id="wrapper">
+
+    <header>
+      <h1>HTML5 Chat</h1>
+    </header>
+
+	<link rel="stylesheet" href="stylesheet.css">	
+
+<article>
+  <form>
+  	<table> 
+		<tr> 
+			<td><input id="chat" placeholder="Kosten" type="text" /></td> 
+		</tr> 
+		<tr> 
+			<td><input id="chat1" placeholder="Funktion" type="text" /></td> 
+		</tr> 
+		<tr> 
+			<td><input id="chat2" placeholder="Qualität" type="text" /></td> 
+		</tr> 
+		<tr> 
+			<td><button type="button" onclick="addMessage(); return false;"> Submit</button></td>
+		</tr> 
+	</table>
+  </form>
+  
+  <p id="status">Not connected</p>
+  <p>Users connected: <span id="connected">0</span></p>
+  <p>To test, open two windows with Web Socket support, type a message above and press return.</p>
+  <ul id="log"></ul>
+</article>
+
+<script src="berechnung.js"></script>
+
+<script>
+
+
+start();
+
+</script>
+</section>
+</body>
+</html>

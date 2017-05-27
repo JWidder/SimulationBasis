@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>Software Entwicklungssimulation</title>
+</head><body>
+<section id="wrapper">
+
+<header>
+	<h1>Software Entwicklungssimulation</h1>
+</header>
+
+<link rel="stylesheet" href="chat-Dateien/stylesheet.css">	
+	
+<article>
+  <form>
+	<table> 
+		<tr> 
+			<td><input id="chat" placeholder="Kosten" type="text" /></td> 
+		</tr> 
+		<tr> 
+			<td><input id="chat1" placeholder="Funktion" type="text" /></td> 
+		</tr> 
+		<tr> 
+			<td><input id="chat2" placeholder="Qualität" type="text" /></td> 
+		</tr> 
+		<tr> 
+			<td><button type="button" onclick="addMessage(); return false;"> Submit</button></td>
+		</tr> 
+	</table>
+	</form>
+  
+  <p id="status" class="fail">Not connected</p>
+  <p>Users connected: <span id="connected">0</span></p>
+  <p>To test, open two windows with Web Socket support, type a message above and press return.</p>
+  <ul id="log"></ul>
+</article>
+
+<script src="chat-Dateien/berechnung.js"></script>
+
+<script>
+    connected = document.getElementById("connected");
+    log = document.getElementById("log");
+    chat = document.getElementById("chat");
+    chat1 = document.getElementById("chat1");
+    chat2 = document.getElementById("chat2");
+    form = chat.form;
+    state = document.getElementById("status");
+
+    if (window.WebSocket === undefined)
+    {
+        state.innerHTML = "sockets not supported";
+        state.className = "fail";
+    }
+    else
+    {
+        if (typeof String.prototype.startsWith != "function")
+        {
+            String.prototype.startsWith = function (str)
+            {
+                return this.indexOf(str) == 0;
+            };
+        }
+    
+        window.addEventListener("load", onLoad, false);
+    }
+</script>
+
+<a id="html5badge" href="http://www.w3.org/html/logo/">
+<img src="chat-Dateien/html5-badge-h-connectivity-device-graphics-multimedia-perfor.png" alt="HTML5 Powered with Connectivity / Realtime, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage" title="HTML5 Powered with Connectivity / Realtime, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage" width="325" height="64">
+</a>
+</section>
+
+
+</body></html>
