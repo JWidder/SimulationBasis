@@ -114,11 +114,17 @@ namespace websocket {
 						std::cout << "kosten: " << pt2.get<std::string>("kosten", "test") << std::endl;
 
 						std::cout << "Wert: " << ausgabe << " <<" << std::endl;
+
+						std::string wert = "test an Web";
+						std::vector<unsigned char> v(wert.begin(), wert.end());
+						read_frame_.payload = v;
+
                         if (result)
                         {
                             if (read_frame_.opcode == dataframe::text_frame)
                             {
 								std::cout << "--> Jetzt werden die Werte ausgegeben: " << std::endl;
+								// Ausgabe der Antwort
                                 room_.deliver(read_frame_, shared_from_this());
 
                                 read_frame_.payload.clear();
