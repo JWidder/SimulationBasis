@@ -15,6 +15,11 @@
 #include <boost/archive/iterators/transform_width.hpp>
 #include <boost/archive/iterators/ostream_iterator.hpp>
 
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/json_parser.hpp>
+
+namespace pt = boost::property_tree;
+
 namespace websocket {
     namespace applications {
         namespace chat {
@@ -99,6 +104,15 @@ namespace websocket {
                             read_frame_, buff_.data(), buff_.data() + bytes_transferred);
 
 						std::string ausgabe(read_frame_.payload.begin(), read_frame_.payload.end());
+
+						// Nachricht wurde im JSON-Format entgegen genommen.
+						pt::ptree pt2;
+						std::istringstream is(ausgabe);
+						read_json(is, pt2);
+						std::cout << "quality: " << pt2.get<std::string>("quality","test") << std::endl;
+						std::cout << "function: " << pt2.get<std::string>("function", "test") << std::endl;
+						std::cout << "kosten: " << pt2.get<std::string>("kosten", "test") << std::endl;
+
 						std::cout << "Wert: " << ausgabe << " <<" << std::endl;
                         if (result)
                         {

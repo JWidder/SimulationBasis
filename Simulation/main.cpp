@@ -6,6 +6,11 @@
 #include <boost/lexical_cast.hpp>
 #include <boost/thread.hpp>
 
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/json_parser.hpp>
+
+namespace pt = boost::property_tree;
+
 /**
 * @brief Main opens starts simulation:
 + 
@@ -21,6 +26,18 @@
 */
 int main(int argc, char* argv[])
 {
+	pt::ptree root;
+
+	root.put("height", 12.0);
+	root.put("some.complex.path", "bonjour");
+
+	std::stringstream testJson;
+
+	// pt::write_json("test.json", root);
+	pt::write_json(testJson, root);
+	// pt::write_json(std::cout, root);
+
+
 	try
 	{
 		// Check command line arguments.

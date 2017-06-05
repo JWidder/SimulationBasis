@@ -25,10 +25,17 @@ function start()
     }
 }
 
+	/*
+	Diese Funktion wird beim Laden der Seite durch "addEventListener" 
+	aufgerufen. 
+	
+	Referenz: https://www.w3schools.com/jsref/event_onload.asp
+	*/
     function onLoad()
     {
         var wsUri = "ws://127.0.0.1:7777";  
-	
+
+		// Registrieren der 
         websocket = new WebSocket(wsUri);
         websocket.onopen = function(evt) { onOpen(evt) };
         websocket.onclose = function(evt) { onClose(evt) };
@@ -40,6 +47,17 @@ function start()
     {
         state.className = "success";
         state.innerHTML = "Connected to server";	
+
+		var mesage  = { 
+			"application"  : "Simulation",
+			"Version"  : 1 ,
+			"Variante" : 1 ,
+			"Revision" : 1
+		};
+		
+		var jsonString = JSON.stringify(mesage);
+		
+       websocket.send(jsonString);
     }
   
     function onClose(evt)
@@ -77,6 +95,15 @@ function start()
 	
     function addMessage()
     {
-        var message = chat.value + " " + chat1.value + " " + chat2.value;
-        websocket.send(message);
+        // var message = chat.value + " " + chat1.value + " " + chat2.value;
+		
+		var mesage  = { 
+			"quality"  : chat.value,
+			"function" : chat1.value,
+			"kosten"   : chat2.value,
+		};
+		
+		var jsonString = JSON.stringify(mesage);
+		
+       websocket.send(jsonString);
     }	
