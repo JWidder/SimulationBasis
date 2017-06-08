@@ -18,6 +18,8 @@
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/json_parser.hpp>
 
+#include ""
+
 namespace pt = boost::property_tree;
 
 namespace websocket {
@@ -28,6 +30,7 @@ namespace websocket {
                 : state_(undefined_state), strand_(io_service),
                 socket_(io_service), room_(room)
             {
+
             }
 
             boost::asio::ip::tcp::socket& session::socket()

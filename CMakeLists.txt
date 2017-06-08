@@ -25,7 +25,7 @@ cmake_minimum_required(VERSION 3.5)
 # endif()
 
 set(BOOST_ROOT "c:/boost64")
-set(BOOST_LIBRARYDIR "c:/boost64")
+set( DIR "c:/boost64")
 set(Boost_USE_STATIC_LIBS OFF)
 add_definitions("-DBOOST_ALL_DYN_LINK")
 
