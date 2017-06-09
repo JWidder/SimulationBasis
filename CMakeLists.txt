@@ -1,6 +1,8 @@
 project(simulation)
 cmake_minimum_required(VERSION 3.5)
 
+SET(BOOST_MIN_VERSION "1.63.0")
+
 # configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
 # execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
 #   WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/googletest-download )
@@ -24,12 +26,12 @@ cmake_minimum_required(VERSION 3.5)
 #                       "${gmock_SOURCE_DIR}/include")
 # endif()
 
-set(BOOST_ROOT "c:/boost64")
-set( DIR "c:/boost64")
+set(BOOST_ROOT "c:/boost")
+set( DIR "c:/boost")
 set(Boost_USE_STATIC_LIBS OFF)
 add_definitions("-DBOOST_ALL_DYN_LINK")
 
-find_package(Boost 1.63 REQUIRED system date_time regex thread unit_test_framework)
+find_package(Boost 1.64 REQUIRED system date_time regex thread unit_test_framework)
 
 add_subdirectory(SimulationServer)
 add_subdirectory(Simulation)

@@ -10,6 +10,7 @@ add_library(SIM_CL STATIC ${SOURCE_SIM_CL} ${HEADER_SIM_CL})
 
 add_executable(simulation main.cpp)
 target_link_libraries(simulation websocket ${Boost_LIBRARIES} simControl SIM_CL)
+target_include_directories(simControl PUBLIC ${CMAKE_CURRENT_LIST_DIR})
 
 # target_include_directories(developper PUBLIC .)
 # target_include_directories(modell PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

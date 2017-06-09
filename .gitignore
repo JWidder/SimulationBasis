@@ -244,3 +244,7 @@ Debug
 *.db
 *.sln
 boost_1_63_0.7z
+/boost_1_64_0.7z
+boost_1_61_0.7z
+/log1.txt
+/log2.txt

@@ -18,7 +18,9 @@ set(HEADER 	dataframe.hpp
 		server.hpp
 		session.hpp)
 
-include_directories(${HEADER_SIMCONTROL} ${Boost_INCLUDE_DIR} )
+include_directories(${Boost_INCLUDE_DIR} )
 add_library(websocket STATIC ${SOURCES} ${HEADER})
 target_include_directories(websocket PUBLIC .)
+
+target_link_libraries(websocket simControl)
 
