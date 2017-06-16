@@ -30,7 +30,7 @@ namespace websocket {
                 : state_(undefined_state), strand_(io_service),
                 socket_(io_service), room_(room)
             {
-				simulation::simulateDevelopment test = simulation::simulateDevelopment();
+				simulation::SimulateDevelopment test = simulation::SimulateDevelopment();
             }
 
             boost::asio::ip::tcp::socket& session::socket()

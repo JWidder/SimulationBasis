@@ -3,6 +3,25 @@
 [Cust: 1] The Simulation is realized as a serious game. 
 [Impl: Goal: 1]
 
+# Non Functional Requirements
+
+[$Cust 2]
+
+Es können verschiedene Typen von Organisationen nachgebildet werden. 
+
+[$Cust 3] 
+
+Simulationen können jederzeit unterbrochen und wieder aufgenommen werden.
+
+[Cust 4]
+
+Die graphische Ausgabe kann ausgetausch werden. Es können zum Beispiel  
+ * WebServer
+ * Kommandozeilenversionen
+ * GUI-Anwendung
+
+[Cust 5]
+Es können mehrere Entwicklungsorganisationen parallel simuliert werden. 
 
 # Entwicklungsorganisation
 

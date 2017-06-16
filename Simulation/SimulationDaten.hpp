@@ -7,10 +7,14 @@ namespace simulation
 {
 	class SimulationDaten {
 	private:
+		// Eigenschaften der Simulation
 		int _dauerEinschwingen;
 		int _dauerDurchgang;
 		int _anzahlDurchgang;
 		bool _isPrintOutput;
+		// Podukteigenschaften
+		double _basisGrösse;
+		int _abstand;
 
 	public:
 		int getDauerEinschwingen() { return _dauerEinschwingen; }
@@ -24,5 +28,11 @@ namespace simulation
 
 		int getPrintOutput() { return _isPrintOutput; }
 		void setPrintOutput(bool isPrintOutput) { _isPrintOutput = isPrintOutput; }
+	
+		double getBasisGrösse() { return _basisGrösse; }
+		void setBasisGroesse(double inBasisGroesse) { _basisGrösse = inBasisGroesse; }
+
+		int getAbstand() { return _abstand; }
+		void setAbstand(int inAbstand) { _abstand = inAbstand; }
 	};
 }
