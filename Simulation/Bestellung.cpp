@@ -2,10 +2,6 @@
 
 namespace simulation
 {
-	Bestellung::Bestellung() : size(10), restDauer(10)
-	{
-	}
-
 	Bestellung::Bestellung(double inSize)
 	{
 		size = inSize;

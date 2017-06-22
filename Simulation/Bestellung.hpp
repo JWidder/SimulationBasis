@@ -10,7 +10,7 @@ namespace simulation
 		double restDauer;
 
 	public:
-		Bestellung(double inSize);
+		Bestellung(double inSize=10.0);
 		~Bestellung();
 
 		double getSize();

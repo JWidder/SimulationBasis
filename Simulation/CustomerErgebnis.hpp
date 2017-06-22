@@ -17,8 +17,6 @@ namespace simulation
 		{
 			return;
 		}
-
-		
 		std::vector<Bestellung> listeBestellungen;
 	};
 }
