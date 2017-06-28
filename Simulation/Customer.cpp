@@ -11,15 +11,17 @@ namespace simulation
 	{
 	}
 
+	// Rückgabe über RVO
 	CustomerErgebnis Customer::bearbeiteTag(int nummer)
 	{
 		CustomerErgebnis tempErgebnis = CustomerErgebnis();
 
-		// Notwendikeit einer Bestellung ermitteln
+		// Notwendigkeit einer Bestellung ermitteln
 		if ((nummer % _simulationDaten.getAbstand()) == 0)
 		{
-			Bestellung tempBestellung = Bestellung(10);
-			tempErgebnis.listeBestellungen.push_back(tempBestellung);
+			;
+			// std::unique_ptr<Bestellung> _bestellung = std::unique_ptr<Bestellung>(new Bestellung);
+			// tempErgebnis.listeBestellungen.push_back(std::move(_bestellung));
 		}
 
 		return tempErgebnis;

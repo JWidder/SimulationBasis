@@ -1,5 +1,7 @@
 #pragma once
 
+#include <memory>
+
 #include "CustomerErgebnis.hpp"
 #include "SimulationDaten.hpp"
 
