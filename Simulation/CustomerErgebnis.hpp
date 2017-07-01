@@ -12,7 +12,7 @@ namespace simulation
 	public:
 		CustomerErgebnis()
 		{
-			// listeBestellungen = std::list<std::unique_ptr<Bestellung>>();
+			listeBestellungen = std::list<std::unique_ptr<Bestellung>>();
 		}
 
 		~CustomerErgebnis()

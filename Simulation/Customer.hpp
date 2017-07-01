@@ -26,6 +26,6 @@ namespace simulation
 		Customer(SimulationDaten inSimulationDaten);
 		~Customer();
 
-		CustomerErgebnis bearbeiteTag(int Tag);
+		std::unique_ptr<CustomerErgebnis> bearbeiteTag(int Tag);
 	};
 }
